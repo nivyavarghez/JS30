@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand sec-hand"></div>
+        </div>
+    </div>
+
+    <style>
+        html {
+            background: #018DED url(https://www.example.com/image.jpg); /* Replace this URL with a direct image URL */
+            background-size: cover;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 10px;
+        }
+        body{
+            font-size: 2rem;
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+            align-items: center; /* Corrected spelling */
+        }
+        .clock{
+            width: 30rem;
+            height: 30rem;
+            border: 20px solid white;
+            border-radius: 50%;
+            margin: 50px auto;
+            position: relative;
+            padding: 2rem;
+            box-shadow:   0 0 0 4px rgba(0,0,0,0.1),
+                            inset 0 0 0 3px #EFEFEF,
+                            inset 0 0 10px black,
+                            0 0 10px rgba(0,0,0,0.2);
+        }
+        .clock-face{
+            position:relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px);
+        }
+        /* .hand{
+            width: 50%;
+            height: 6px;
+            background: black;
+            position:absolute;
+            top: 50%;
+        } */
+        .hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0%;
+    transform: translateX(-50%);
+}
+
+    </style>
+    <script>
+        const sechand= document.querySelector('.sec-hand');
+        const minhand= document.querySelector('.min-hand');
+        const hourhand= document.querySelector('.hour-hand');
+
+        function setDate(){
+            const now = new Date();
+
+            const secs = now.getSeconds();
+            const secsDeg = ((secs/60)*360)+90;
+            sechand.style.transform =`rotate(${secsDeg}deg)`;
+
+            const mins = now.getMinutes();
+            const minsDeg =((mins/60)*360)+((secs/60)*6)+90;
+            minhand.style.transform =`rotate(${minsDeg}deg)`;
+
+            const hour = now.getHours();
+            const hourDeg =((hour/12)*360)+((mins/60)*30)+90; /* Corrected calculation */
+            hourhand.style.transform =`rotate(${hourDeg}deg)`;
+
+        }
+
+        setInterval(setDate, 1000);
+        setDate();
+    </script>
+</body>
+</html>
