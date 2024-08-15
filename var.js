@@ -1,6 +1,6 @@
-var admin, name ;
-name ="john";
-admin = name;
- alert(admin);
-
-//var is also used instead of let
+let iceCream ="choclate";
+if(iceCream === "choclate"){
+    alert("Yay , i Love choclate ice Cream!");
+}else{
+    alert("Awww , but choclate is my fav");
+}

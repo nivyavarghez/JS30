@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        h3{
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--When to use JavaScript const?
+Always declare a variable with const when you know that the value should not be changed.
+
+Use const when you declare:
+
+A new Array
+A new Object
+A new Function
+A new RegExp-->
+
+<h3>Constant in JS</h3>
+<p>Let's go with some constants:<select id="constants">
+    <option value="PI">pi</option>
+    <option value="Squareroot2">root of 2</option>
+    <option value="PHI">phi</option>
+    <option value="Ramanujan">Ramanujan Num</option>
+</select></p>
+
+<p id="result"></p>
+
+<script>
+        const PI = 3.14 ;
+        const Squareroot2 = 1.4142;
+        const PHI =1.61803;
+        const Ramanujan = 1.61804;
+
+        const constMap = {
+            PI:PI,Squareroot2:Squareroot2,PHI:PHI,Ramanujan:Ramanujan
+        };
+        document.getElementById('constants').addEventListener('change', function(){
+            var selectedValue = this.value;
+            var result = document.getElementById('result');
+            if(selectedValue != null){
+                result.innerHTML = "The value is:"+ constMap[selectedValue];
+            }else{
+                result.innerHTML = " ";
+            }
+        });
+</script>
+
+</body>
+</html>
