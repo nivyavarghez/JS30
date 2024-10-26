@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <h2>Constructor function in JS</h2>
+    <p id="demo"></p>
+    <script>
+        function Person(first, last, age, eye){
+            this.first = first;
+            this.last = last;
+            this.age = age;
+            this.eye = eye;
+        }
+
+        const Myfather = new Person("Varghese","K.A",56,"Dark Brown");
+
+        document.getElementById("demo") .innerHTML= "My father is " +Myfather.age + " years old";  
+        </script>
+</body>
+</html>

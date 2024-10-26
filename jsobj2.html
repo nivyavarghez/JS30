@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjProp</title>
+</head>
+<body>
+    <p id="demo">
+        <script>
+            const person = {
+              firstName: "John",
+              lastName : "Doe",
+              age      :  50
+            };
+            // delete person.age;
+            // //after deleting the result we get is undefined
+            // // The delete keyword deletes both the value of the property and the property itself.
+            // let x = "firstName";
+            // let y = "age";
+            // person.nationality = " English ";
+            // document.getElementById("demo").innerHTML = person[x] + " is " + person[y] + " years old.";
+            // /*Adding an property*/
+            // document.getElementById("demo").innerHTML = person[x] + " is " + person.nationality;
+            let myString = JSON.stringify(person);
+            //display String 
+            
+            document.getElementById("demo").innerHTML = myString;
+            </script>
+    </p>
+    
+</body>
+</html>

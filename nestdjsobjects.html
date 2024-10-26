@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Objects</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const myObj ={
+            name:"john",
+            age : 30,
+            myCars:{
+                cars1 :"ford",
+                cars2 :"BMW",
+                cars3 :"Fiat" 
+            }
+        }
+        document.getElementById("demo").innerHTML = myObj.myCars.cars3;
+        </script>
+</body>
+</html>
